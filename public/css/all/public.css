@@ -1,0 +1,9 @@
+.my-a
+{
+	color: #000;
+}
+.my-a:hover
+{
+	text-decoration: none;
+	color: #fc1000;
+}

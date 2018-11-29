@@ -15,7 +15,13 @@ class User extends Curd_Controller
 	public function index()
 	{
 		$data['data'] = $this->_getList();
-		$this->load->view('admin/user', $data);
+
+		$this->template->appendTitle('Manage User');
+		$this->template->setMasterPage('admin/master-admin');
+		$this->template->addContentPage('admin/topbar','topbar');
+		$this->template->addContentPage('admin/left-menu','left-menu');
+		$this->template->addContentPage('admin/center-user','center',$data);
+		$this->template->show();
 	}
 	public function add()
 	{

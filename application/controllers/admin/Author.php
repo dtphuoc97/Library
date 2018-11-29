@@ -13,7 +13,12 @@ class Author extends Curd_Controller
 	public function index()
 	{
 		$data['data'] = $this->_getList();
-		$this->load->view('admin/author',$data);
+		$this->template->appendTitle('Manage Author');
+		$this->template->setMasterPage('admin/master-admin');
+		$this->template->addContentPage('admin/topbar','topbar');
+		$this->template->addContentPage('admin/left-menu','left-menu');
+		$this->template->addContentPage('admin/center-author','center',$data);
+		$this->template->show();
 	}
 	public function add()
 	{

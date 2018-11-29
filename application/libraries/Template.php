@@ -4,7 +4,8 @@
  * @author Hien Nguyen
  * @copyright Copyright (c) 2011, Hien Nguyen
  * @modified : nguyennt <nguyen.nt1105@gmail.com>
- * @version 0.0.1
+ * @last-modified : phuoctd
+ * @version 0.0.2
  */
 
 class Template {
@@ -33,7 +34,7 @@ class Template {
 	* @param string $title // tittle to append
 	*/
 	public function appendTitle($title) {
-		$this->__title .= ' - '. $title; 
+		$this->__title .= $title; 
 	}
 
     /**
@@ -42,11 +43,12 @@ class Template {
      */
     public function setMasterPage ( $masterPage ) {
         // Check if the supplied masterpage exists.
-        if ( !file_exists(APPPATH . 'views/' . $this->__template . '/'. $masterPage . EXT ))  {
-            throw new Exception ( APPPATH . 'views/' . $this->__template . '/' . $masterPage . EXT . ' Or ' . APPPATH . 'views/' . $masterPage . EXT);
+        if ( !file_exists(APPPATH . 'views/' . $this->__template . '/'. $masterPage . '.php' ))  {
+            throw new Exception ( APPPATH . 'views/' . $this->__template . '/' . $masterPage . '.php' . ' Or ' . APPPATH . 'views/' . $masterPage . '.php');
 		}
 			
         $this->masterPage = $this->__template.'/'.$masterPage;
+
     }
 
     /**
@@ -137,8 +139,8 @@ class Template {
 		$data['keywords'] = $this->CI->config->item('keywords');
 		$data['description'] = $this->CI->config->item('description');
         $masterPage = $this->CI->load->view ( $this->masterPage, $data, true );
-        foreach ( $this->contentPages as $tag => $content ) {
-            $masterPage = str_replace ( '<mp:' . ucfirst(strtolower($tag)) . '/>', $content, $masterPage );
+        foreach ( $this->contentPages as $tag => $content ) {   
+            $masterPage = str_replace ( '<mp:'.strtolower($tag).'/>', $content, $masterPage );
         }
 
         // Finally, print the data.
@@ -151,8 +153,8 @@ class Template {
      */
     public function getPartial ($page, $data = array() ) 
 	{
-		 if ( !file_exists(APPPATH . 'views/' . $this->__template . '/'. $page . EXT )) {
-            throw new Exception ( APPPATH . 'views/' . $this->__template . '/' . $page . EXT . ' Or ' . APPPATH . 'views/' . $page . EXT);
+		 if ( !file_exists(APPPATH . 'views/' . $this->__template . '/'. $page . '.php' )) {
+            throw new Exception ( APPPATH . 'views/' . $this->__template . '/' . $page . '.php' . ' Or ' . APPPATH . 'views/' . $page . '.php');
 		}
 			
         $masterPage = $this->__template.'/'.$page;

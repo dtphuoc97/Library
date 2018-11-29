@@ -15,6 +15,11 @@ class Book extends Curd_Controller
 	public function index()
 	{
 		$data['data'] = $this->_getList();
-		$this->load->view('admin/books',$data);
+		$this->template->appendTitle('Dashboard');
+		$this->template->setMasterPage('admin/master-admin');
+		$this->template->addContentPage('admin/topbar','topbar');
+		$this->template->addContentPage('admin/left-menu','left-menu');
+		$this->template->addContentPage('admin/center-booka','center',$data);
+		$this->template->show();
 	}
 }

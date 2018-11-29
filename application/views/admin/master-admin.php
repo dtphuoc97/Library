@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>$title</title>
+	<title><?php echo $title ?></title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('public/').'css/admin/public_ad.css'; ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('public/').'css/all/public.css'; ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('public/').'css/all/form-input.css'; ?>">

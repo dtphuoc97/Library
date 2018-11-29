@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Users Manage</title>
-	<?php include('include_acc/head.php'); ?>
+	<title>Access</title>
+	<?php include('head.php'); ?>
 </head>
 <body>
 	<div class="my-topbar">
-		<?php include('include_acc/topbar.php'); ?>
+		<?php include('topbar.php'); ?>
 	</div>
 	<div class="my-center">
 

@@ -132,12 +132,12 @@ CONTENT
  
 .user_icon {
     top:148px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */
-    background: rgba(65,72,72,0.75) url(../../../images/user-icon.png) no-repeat center;    
+    background: rgba(65,72,72,0.75) url(../../../public/img/user-icon.png) no-repeat center;    
 }
  
 .pass_icon {
     top:202px;
-    background: rgba(65,72,72,0.75) url(../../../images/pass-icon.png) no-repeat center;
+    background: rgba(65,72,72,0.75) url(../../../public/img/pass-icon.png) no-repeat center;
 }
 .error {
     height: 46px;

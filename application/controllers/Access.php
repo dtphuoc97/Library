@@ -32,7 +32,7 @@ class Access extends MY_Controller
 			switch ($login['level'])//kiem tra cap bac user de xac dinh redirect
 			{
 				case 1: //level 1 --> di toi trang admin
-					$result['url'] = base_url('admin');
+					$result['url'] = base_url('admin/dashboard');
 					break;
 				// di ve trang nguoi dung
 				default:
